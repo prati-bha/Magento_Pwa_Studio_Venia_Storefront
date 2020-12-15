@@ -20,7 +20,7 @@ const Main = props => {
         <main className={rootClass}>
             <Header />
             <div className={pageClass}>{children}</div>
-            {/* <Footer /> */}
+            <Footer />
         </main>
     );
 };
