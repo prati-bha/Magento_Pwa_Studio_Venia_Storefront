@@ -5,6 +5,11 @@ module.exports = targets => {
             pattern: "/greeting/:who",
             path: require.resolve("../components/GreetingPage/greetingPage.js")
         });
+        routes.push({
+            name: "Countries",
+            pattern: "/countries",
+            path: require.resolve("../components/Countries")
+        });
         return routes;
     });
 };
