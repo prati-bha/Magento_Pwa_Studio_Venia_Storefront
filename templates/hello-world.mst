@@ -1,0 +1,11 @@
+{{> templates/open-document}}
+  <title>{{ title }}</title>
+ {{> templates/open-body}}
+
+    <b>Hello Template World!</b>
+
+    <div id="root">Loading...</div>
+
+   <script src="../src/hello-world.js"></script>
+
+  {{> templates/close-document}}

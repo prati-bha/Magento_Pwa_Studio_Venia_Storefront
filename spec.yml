@@ -1,0 +1,68 @@
+status: response.status
+headers: response.headers
+body: response.body
+
+response:
+  resolver: conditional
+  when:
+  - matches: request.url.pathname
+    pattern: '^/?$'
+    use: helloWorld
+  - matches: request.url.pathname
+    pattern: '^/hello-world/?$'
+    use: helloWorld
+  default: notFound
+
+notFound:
+    inline:
+        status:
+            resolver: inline
+            inline: 404
+        headers:
+            resolver: inline
+            inline:
+                content-type:
+                    resolver: inline
+                    inline: 'text/string'
+        body:
+            resolver: inline
+            inline: 'Page not found!'
+
+helloWorld:
+    inline:
+        status:
+            resolver: inline
+            inline: 200
+        headers:
+            resolver: inline
+            inline:
+                content-type:
+                    resolver: inline
+                    inline: 'text/html'
+        body:
+            resolver: template
+            engine: mustache
+            template: './templates/hello-world.mst'
+            provide:
+              title:
+               resolver: inline
+               inline: 'This is the page title!'
+appScript:
+    inline:
+        status:
+          resolver: inline
+          inline: 200
+        headers:
+          resolver: inline
+          inline:
+             content-type:
+                resolver: inline
+                inline: 'application/javascript'
+        body:
+            resolver: file
+            file:
+              resolver: inline
+              inline: './dist/app.js'
+            encoding:
+              resolver: inline
+              inline: 'utf-8'
