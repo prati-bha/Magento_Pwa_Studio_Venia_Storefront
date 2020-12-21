@@ -11,6 +11,9 @@ response:
   - matches: request.url.pathname
     pattern: '^/hello-world/?$'
     use: helloWorld
+  - matches: request.url.pathname
+    pattern: '^/js/app.js'
+    use: appScript
   default: notFound
 
 notFound:

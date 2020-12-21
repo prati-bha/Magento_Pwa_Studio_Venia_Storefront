@@ -6,6 +6,6 @@
 
     <div id="root">Loading...</div>
 
-   <script src="../src/hello-world.js"></script>
+   <script defer src="../dist/app.js"></script>
 
   {{> templates/close-document}}
