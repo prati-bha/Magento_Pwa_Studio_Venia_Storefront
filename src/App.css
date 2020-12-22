@@ -1,0 +1,47 @@
+.app {
+  --font: Roboto, sans-serif;
+  --venia-font: var(--font);
+  font: var(--font);
+  display: flex;
+  flex-direction: column;
+}
+
+
+.header {
+  background-color: #282c34;
+  min-height: 2vh;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.title {
+  margin: 0.4rem 0 0.6rem;
+  font-size: 4vh;
+  font-variant: small-caps;
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: stretch;
+}
+
+.link {
+  flex: 1;
+  text-align: center;
+  padding: 0.4rem 0 0.6rem;
+  font-variant: small-caps;
+}
+
+.active {
+  background-color: #41aacb;
+}
+
+.heading {
+  color: white;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  padding: 0.6rem 1rem;
+  background: #41aacb;
+}
